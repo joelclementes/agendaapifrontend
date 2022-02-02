@@ -38,7 +38,7 @@ class Agenda {
             for (let d of datos) {
                 strElementos += `
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div><a>${d.nombre}</a><div>
+            <div><a>${d.nombre} - ${d.correo}</a><div>
             <button class="btn btn-success" onclick="new Agenda().fnMuestraDatos(${d.id},'${d.nombre}','${d.correo}')">Editar</button>
             
             <button class="btn btn-light" onclick="new Agenda().agenda_delete(${d.id})">Eliminar</button>
