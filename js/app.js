@@ -1,7 +1,7 @@
 class Agenda {
     constructor(reset = false) {
         // Definimos la url de nuestro CRUD
-        this.url = "http://localhost/agendaapi/index.php/";
+        this.url = "http://localhost/agendaapibackend/index.php/";
 
         if (reset) {
             new Agenda().agenda_select_all();
