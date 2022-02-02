@@ -17,6 +17,17 @@ class Agenda {
         }
     }
 
+    async peticion(url = "", datos = "") {
+        try {
+            let cadenaFetch = `${url}?${datos}`;
+            let response = await fetch(cadenaFetch);
+            let resultado = await response.json();
+            return resultado;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async agenda_select_all() {
         try {
             let datos_url = `proceso=AGENDA_SELECT_ALL`;
@@ -43,17 +54,6 @@ class Agenda {
         }
     }
 
-    async peticion(url = "", datos = "") {
-        try {
-            let cadenaFetch = `${url}?${datos}`;
-            let response = await fetch(cadenaFetch);
-            let resultado = await response.json();
-            return resultado;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    
     async agenda_insert() {
         let divMsg = document.querySelector("#error");
         divMsg.innerHTML = "";
